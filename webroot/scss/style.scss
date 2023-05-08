@@ -1,0 +1,428 @@
+/*!
+ * Bootstrap v5.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/utilities";
+
+// Layout & components
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/containers";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+@import "bootstrap/accordion";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/toasts";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/spinners";
+@import "bootstrap/offcanvas";
+@import "bootstrap/placeholders";
+
+// Helpers
+@import "bootstrap/helpers";
+
+// Utilities
+@import "bootstrap/utilities/api";
+// scss-docs-end import-stack
+
+// FontAwesome
+@import "../scss/fontawesome/fontawesome.scss";
+@import "../scss/fontawesome/brands.scss";
+@import "../scss/fontawesome/solid.scss";
+@import "../scss/fontawesome/regular.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*variables*/
+$base-color: #424242;
+$primary-color: #03a9f4;
+$white-color: #fafafa;
+$container-color: #e0e0e0;
+$base-font: 2em;
+$primary-font: 1em;
+$second-font: 5em;
+/*default*/
+.myContainer {
+    width: 100%;
+}
+
+/*Index home*/
+body {
+    .containerBook {
+        width: 100%;
+        margin: 0;
+        .dropdown {
+            overflow: hidden;
+            &:hover {
+                .dropdown-content {
+                    display: flex;
+                    flex-direction: column;
+                    height: $second-font;
+                }
+            }
+              .dropdown-content {
+                display: none;
+                position: absolute;
+                // background-color: $white-color;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+              }
+        }
+        .booksGroup {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: $second-font;
+            .bookBody {
+                display: flex;
+                flex-direction: row;
+                width: 30%;
+                margin: $base-font 0;
+                .custom {
+                    width: 15em;
+                    height: 22em;
+                }
+                .bookDescription {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 2.5em 0.5em 1em 1.5em;
+                    width: 17em;
+                    p {
+                        font-size: 0.6em;
+                    }
+                    h3 {
+                        .title {
+                            font-size: $primary-font;
+                            color:#f48fb1;
+                            text-decoration: none;
+                            &:hover {
+                                color: #f06292;
+                            }
+                        }
+                    }
+                    .link {
+                        color: $primary-color;
+                        text-decoration: none;
+                        &:hover {
+                            transition: .6s;
+                            color: #bbdefb;
+                        }
+                        &:visited {
+                            color: #8c9eff;
+                            &:hover {
+                                transition: .6s;
+                                color: #bbdefb;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/*index from Pages*/
+.firstContainer {
+    height: 100%;
+    background: linear-gradient(#fffde7, rgba(0, 0, 0, 0.7) );
+    padding-top: $second-font;
+
+    .container {
+        text-align: justify;
+
+        .bookImage {
+            width: 60em;
+        }
+    }
+    .article {
+        .text {
+            font-weight: bold;
+            font-size: 1.1em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    }
+    .article.active {
+        color: #fffde7;
+    }
+  }
+
+.myNavbar {
+    display: flex;
+    flex-direction: column;
+    .navBar {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .navLogo {
+            margin-left: $primary-font;
+        }
+        .navItems {
+            margin-right: $primary-font;
+        }
+    }
+    .header2 {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        .progress-container {
+            width: 100%;
+            height: 2px;
+            background: #212121;
+            .progress-bar {
+                height: 2px;
+                border-radius: 5px;
+                background: $primary-color;
+                width: 0%;
+              }
+          }
+    }
+}
+/*Login Page UsersControler*/
+.navBarSign {
+    .navLogo {
+        margin-left: $primary-font;
+    }
+    .navItems {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: $primary-font;
+    }
+}
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.myContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .containerLogin {
+        border-radius: 5px;
+        margin-top: $second-font;
+        width: 40em;
+        background-color: $white-color;
+        height: 36em;
+        .loginForm {
+            margin-top: $base-font;
+            .title {
+                padding-bottom: $primary-font;
+            }
+            .buttonOne {
+                width: 100%;
+            }
+        }
+
+    }
+}
+/*Home rom BooksControler*/
+.listBookContainer {
+    padding: $base-font;
+    width: 100%;
+    .titleListBook {
+        color: $white-color;
+        text-align: center;
+    }
+    .listBooks {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .thead {
+            .th {
+                color: $white-color;
+            }
+            th {
+                .link {
+                    color: $white-color;
+                    text-decoration: none;
+                }
+            }
+
+        }
+        .imageBook1 {
+            width: $second-font;
+        }
+        .hover {
+
+            &:hover {
+                background-color: $base-color;
+            }
+            .link {
+                color: $white-color;
+                text-decoration: none;
+                &:visited {
+                    color: $primary-color;
+                  }
+            }
+        }
+
+    }
+    .paginate {
+        background-color: $base-color;
+    }
+}
+
+/*view books*/
+.containerBook {
+    .bookImage {
+        width: 100%;
+        padding: 3em;
+    }
+    .cardBody {
+        margin: $base-font $base-font 0 0;
+        h5 {
+            font-size: 3em;
+            font-weight: 800;
+            text-transform: capitalize;
+            margin-bottom: 0.6em;
+        }
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+/*User profile*/
+.profileContainer {
+    margin-top: $second-font;
+}
+
+/*User edit*/
+.imageProfile {
+    width:40%;
+    border-radius: 50%;
+    margin-bottom: $base-font;
+}
+
+
+/*Authors view*/
+.containerAuthor {
+    color: #bdbdbd;
+    padding: $base-font;
+
+    .book-title {
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+            color: $primary-color;
+            font-weight: bold;
+            margin-bottom: $primary-font;
+        }
+    }
+
+    .text-span {
+        font-weight: 400;
+    }
+    blockquote {
+        text-align: justify;
+    }
+    .related {
+        margin-top: $base-font;
+        h4 {
+            color: #b3e5fc;
+        }
+    }
+}
+
+/*Authors edit*/
+.containerEditAuthor {
+    background-color: $container-color;
+    padding: $base-font;
+    display: flex;
+    flex-direction: row;
+
+    .titleContainer {
+        display: flex;
+        justify-content: center;
+        span {
+            font-weight: bold;
+            color: $primary-color;
+        }
+
+    }
+    label {
+        margin: 0 0 0.5em 0;
+        font-weight: bold;
+    }
+}
+
+/*Authors index*/
+.containerAuthors {
+    background-color: #212121;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50em;
+    .table-responsive {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .tableAuthor {
+            width: 32em;
+            color: $container-color;
+            text-align: start;
+
+            .name {
+                width: 50%;
+            }
+            .id {
+                width: 10%;
+            }
+
+            .th {
+                text-align: center;
+            }
+            .td {
+                text-align: end;
+                width: 30%;
+            }
+        }
+    }
+    .paginate {
+        margin-top: $primary-font;
+    }
+
+}
+
